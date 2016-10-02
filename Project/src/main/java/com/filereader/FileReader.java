@@ -75,11 +75,13 @@ public class FileReader {
 				String newLineItem = line.trim();
 				String itemnumber;
 				for (int i = 0; i < newLineItem.length(); i++) {
+					System.out.println("inside");
 					// this condition checks if there is a sequence of '---' to
 					// access
 					if (newLineItem.charAt(i) == '-' && newLineItem.charAt(i + 1) == '-'
 							&& newLineItem.charAt(i + 2) == '-') {
 						itemnumber = newLineItem.substring(0, i).trim();
+						
 						System.out.println("number of items " + itemnumber);
 						principalInstance.setItemNumber(Integer.valueOf(itemnumber));
 
@@ -154,6 +156,7 @@ public class FileReader {
 			}
 
 		}
+		scanner.close();
 	}
 
 	public static List<String> getFiles() throws IOException {
