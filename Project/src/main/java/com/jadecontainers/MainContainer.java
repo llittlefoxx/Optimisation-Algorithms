@@ -8,14 +8,16 @@ import jade.util.leap.Properties;
 import jade.wrapper.AgentContainer;
 import jade.wrapper.ControllerException;
 
+
+//this class allows us to create a main container (it should be executed first)
 public class MainContainer {
 
-	public static void main (String[] args){
-		Runtime rt=Runtime.instance();
-		Properties p =new ExtendedProperties();
+	public static void main(String[] args) {
+		Runtime rt = Runtime.instance();
+		Properties p = new ExtendedProperties();
 		p.setProperty("gui", "true");
-		ProfileImpl pc=new ProfileImpl(p);
-		AgentContainer container=rt.createMainContainer(pc);
+		ProfileImpl pc = new ProfileImpl(p);
+		AgentContainer container = rt.createMainContainer(pc);
 		try {
 			container.start();
 		} catch (ControllerException e) {
