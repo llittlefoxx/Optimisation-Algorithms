@@ -46,4 +46,7 @@ public class Node {
 		this.demand = demand;
 	}
 
+	public Node() {
+
+	}
 }
