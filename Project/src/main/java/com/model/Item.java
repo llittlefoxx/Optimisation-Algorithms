@@ -4,6 +4,17 @@ public class Item {
 
 	private int height;
 	private int width;
+    private double surface;
+    
+    
+	public double getSurface() {
+		
+		return this.height * this.width;
+	}
+
+	public void setSurface(double surface) {
+		this.surface = surface;
+	}
 
 	public int getHeight() {
 		return height;
