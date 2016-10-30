@@ -191,7 +191,7 @@ public class FileReader {
 					}
 					System.out.println("----------------");
 				}else{
-					System.out.println("rak nesi el zero");
+					System.out.println("ERROR");
 					
 				}
 

@@ -8,6 +8,20 @@ public class ItemsPerNode {
 	private Node node;
 	private List<Item> items = new ArrayList<Item>();
 	private int numberOfItems;
+	private double totalSurface;
+	
+
+	public double getTotalSurface() {
+		double total=0;
+		for (Item item : items) {
+			total=total+item.getSurface();
+		}
+		return total;
+	}
+
+	public void setTotalSurface(double totalSurface) {
+		this.totalSurface = totalSurface;
+	}
 
 	public Node getNode() {
 		return node;

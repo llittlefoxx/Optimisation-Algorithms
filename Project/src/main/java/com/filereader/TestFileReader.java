@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.model.Item;
+import com.model.ItemsPerNode;
 import com.model.PrincipalInstance;
 
 public class TestFileReader {
@@ -21,6 +23,16 @@ public class TestFileReader {
 		}
 		System.out.println("nbr files "+listeFichiers.size());
 		System.out.println("taille total"+test.size());
+		for (PrincipalInstance pi : test) {
+			System.out.println("principal Instance "+pi.getInstnaceName());
+			for (ItemsPerNode ipn : pi.getItemspernode()) {
+				System.out.println("--- > number item per node "+ipn.getNumberOfItems() +" total surface "+ipn.getTotalSurface());
+				for (Item i : ipn.getItems()) {
+					
+					System.out.println(" *****> surface de "+i.getHeight() + " et "+i.getWidth() +" est "+i.getSurface());
+				}
+			}
+		}
 	}	
 
 }
