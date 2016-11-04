@@ -39,7 +39,8 @@ public class FileReader {
 				System.out.println("Instance name " + principalInstance.getInstnaceName());
 				System.out.println(" line 1" + line);
 				line = scanner.nextLine();
-
+				line = scanner.nextLine();
+				System.out.println(" line 2" + line);
 				String x = line.trim();
 				String custnumber = "";
 				for (int i = 0; i < x.length(); i++) {
@@ -56,6 +57,7 @@ public class FileReader {
 
 				line = scanner.nextLine();
 
+				System.out.println("------********** ena houni "+line);
 				String newLineVehicul = line.trim();
 				System.out.println("new line ->" + newLineVehicul);
 				String vehinumber;

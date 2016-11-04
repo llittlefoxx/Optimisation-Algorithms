@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.algorithms.AgentLoading;
 import com.model.Item;
 import com.model.ItemsPerNode;
 import com.model.PrincipalInstance;
@@ -31,6 +32,14 @@ public class TestFileReader {
 					
 					System.out.println(" *****> surface de "+i.getHeight() + " et "+i.getWidth() +" est "+i.getSurface());
 				}
+			}
+			Tools.checkWeigh(pi.getVehiculs(), pi.getNodes());
+			
+			for (ItemsPerNode it : pi.getItemspernode()) {
+				System.err.println(it.getNode().getNodeNumber()+" --++++" + it.getTotalSurface());
+			}
+			for (ItemsPerNode it : Tools.sortnodes(pi.getItemspernode())) {
+				System.out.println(it.getNode().getNodeNumber()+" --++++" + it.getTotalSurface());
 			}
 		}
 	}	
