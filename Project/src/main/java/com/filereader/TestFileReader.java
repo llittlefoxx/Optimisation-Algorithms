@@ -27,7 +27,7 @@ public class TestFileReader {
 		for (PrincipalInstance pi : test) {
 			System.out.println("principal Instance "+pi.getInstnaceName());
 			for (ItemsPerNode ipn : pi.getItemspernode()) {
-				System.out.println("--- > number item per node "+ipn.getNumberOfItems() +" total surface "+ipn.getTotalSurface());
+				System.err.println("Node number -> "+ipn.getNode().getNodeNumber()+" --- > number item per node "+ipn.getNumberOfItems() +" total surface "+ipn.getTotalSurface());
 				for (Item i : ipn.getItems()) {
 					
 					System.out.println(" *****> surface de "+i.getHeight() + " et "+i.getWidth() +" est "+i.getSurface());
@@ -41,6 +41,9 @@ public class TestFileReader {
 			for (ItemsPerNode it : Tools.sortnodes(pi.getItemspernode())) {
 				System.out.println(it.getNode().getNodeNumber()+" --++++" + it.getTotalSurface());
 			}
+			
+			AgentLoading.Load(pi.getVehiculs(),Tools.sortnodes(pi.getItemspernode()));
+			
 		}
 	}	
 

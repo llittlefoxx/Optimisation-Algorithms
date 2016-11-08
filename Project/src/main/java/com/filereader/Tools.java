@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.TreeMap;
 
+import com.model.Item;
 import com.model.ItemsPerNode;
 import com.model.Node;
 import com.model.Vehicule;
@@ -54,7 +55,7 @@ public class Tools {
 			@Override
 			public int compare(ItemsPerNode o1, ItemsPerNode o2) {
 				
-				if(o1.getTotalSurface()<o2.getTotalSurface()){
+				if(o1.getTotalSurface()>o2.getTotalSurface()){
 					return -1;
 				}else{
 					return 1;
@@ -62,7 +63,12 @@ public class Tools {
 			}
 			
 		});
-		return src;
+		
+		List<ItemsPerNode> ipn=new ArrayList<>();
+		for (ItemsPerNode itemsPerNode : src) {
+			ipn.add(itemsPerNode);
+		}
+		return ipn;
 	}
 	
 	// this method takes as parameter a string that contains numbers separated

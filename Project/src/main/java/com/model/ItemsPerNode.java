@@ -53,4 +53,8 @@ public class ItemsPerNode {
 		this.numberOfItems = numberOfItems;
 	}
 
+	public ItemsPerNode() {
+		// TODO Auto-generated constructor stub
+	}
+
 }
