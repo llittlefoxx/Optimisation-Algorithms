@@ -10,12 +10,15 @@ import com.model.Vehicule;
 
 public class AgentLoading {
 
+	public static Vehicule vehicule ;
+	public static int veiW ;
+	public static int veiH;
 	public static void Load(List<Vehicule> vehicules, List<ItemsPerNode> itemsPerNode) {
 	
 		// 5 vertical //6 horis
-		Vehicule vehicule = vehicules.get(0);
-		int veiH = vehicule.getHeight();
-		int veiW = vehicule.getWidth();
+		vehicule = vehicules.get(0);
+		veiH = vehicule.getHeight();
+		veiW = vehicule.getWidth();
 
 		List<ItemsPerNode> ipnv=new ArrayList<>();
 		vehicule.setItemsPerVehicul(ipnv);
