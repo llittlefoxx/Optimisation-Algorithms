@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.algorithms.AgentLoading;
+import com.algorithms.Chargement;
 import com.model.Item;
 import com.model.ItemsPerNode;
 import com.model.PrincipalInstance;
@@ -42,7 +43,8 @@ public class TestFileReader {
 				System.out.println(it.getNode().getNodeNumber()+" --++++" + it.getTotalSurface());
 			}
 			
-			AgentLoading.Load(pi.getVehiculs(),Tools.sortnodes(pi.getItemspernode()));
+		//	AgentLoading.Load(pi.getVehiculs(),Tools.sortnodes(pi.getItemspernode()));
+			Chargement.charger(pi.getVehiculs(),Tools.sortnodes(pi.getItemspernode()));
 			
 		}
 	}	

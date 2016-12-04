@@ -14,7 +14,7 @@ public class TestGraphic {
 	public static  void createFrame(int x,int y,int w,int h, List<ItemsPerNode> itemsPerNode) {
 		JFrame window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setBounds(x, y, w*5, h*5);
+		window.setBounds(x, y, w*10, h*10);
 		
 			window.getContentPane().add(new MyCanvas(itemsPerNode));	
 		

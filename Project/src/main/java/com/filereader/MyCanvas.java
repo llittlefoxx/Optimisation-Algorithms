@@ -40,6 +40,8 @@ public class MyCanvas extends JComponent {
 
 	private int currentWload = 0;
 
+	private int totalW;
+
 	public MyCanvas(List<ItemsPerNode> itemsPerNode) {
 		this.itemsPerNode = itemsPerNode;
 
@@ -51,30 +53,34 @@ public class MyCanvas extends JComponent {
 	 */
 	public void paint(Graphics g) {
 
-		Position p=new Position(0, 0, AgentLoading.veiW, AgentLoading.veiH);
+		Position InitialFreePosition=new Position(0, 0, AgentLoading.veiW*10, AgentLoading.veiH*10);
+		emptyPositions.add(InitialFreePosition);
 		for (int i = 0; i < itemsPerNode.size(); i++) {
 
+			
 			for (Item item : itemsPerNode.get(i).getItems()) {
 
-				for (Position position : fullPositions) {
+				for (Position position : emptyPositions) {
+					if(position.getW()>=item.getWidth() * 10 && position.getH()>=item.getHeight() *10 ){
+						Graphics2D gr = (Graphics2D) g;
+						gr.setColor(colors[i]);
 
-					if (position.getY() == y) {
+						gr.drawString(itemsPerNode.get(i).getNode().getNodeNumber() + "",
+								((item.getWidth() * 10 + item.getHeight() * 10) / 2) + x,
+								(item.getWidth() * 10 + item.getHeight() * 10) / 2);
 
-						currentWload += position.getW();
+						gr.drawRect(x, y, item.getWidth() * 10, item.getHeight() * 10);
+						Position fullposition = new Position(x, y, item.getHeight() * 10, item.getHeight() * 10);
+						for (Position position2 : fullPositions) {
+							totalW+=position2.getW();
+						}
+						Position freePosition1=new Position(x, y, i, i);
+						fullPositions.add(fullposition);
+						x += item.getWidth() * 10;
+						System.err.println("current " + currentWload);
 					}
 				}
-				Graphics2D gr = (Graphics2D) g;
-				gr.setColor(colors[i]);
-
-				gr.drawString(itemsPerNode.get(i).getNode().getNodeNumber() + "",
-						((item.getWidth() * 5 + item.getHeight() * 5) / 2) + x,
-						(item.getWidth() * 5 + item.getHeight() * 5) / 2);
-
-				gr.drawRect(x, y, item.getWidth() * 5, item.getHeight() * 5);
-				Position position = new Position(x, y, item.getHeight() * 5, item.getHeight() * 5);
-				fullPositions.add(position);
-				x += item.getWidth() * 5;
-				System.err.println("current " + currentWload);
+			
 
 			}
 

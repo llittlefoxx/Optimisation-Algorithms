@@ -15,7 +15,7 @@ public class AgentLoading {
 	public static int veiH;
 	public static void Load(List<Vehicule> vehicules, List<ItemsPerNode> itemsPerNode) {
 	
-		// 5 vertical //6 horis
+		
 		vehicule = vehicules.get(0);
 		veiH = vehicule.getHeight();
 		veiW = vehicule.getWidth();
@@ -26,16 +26,7 @@ public class AgentLoading {
 		
 		//with frame 
 		TestGraphic.createFrame(0,0 , veiW*10, veiW*10,itemsPerNode);
- 
-		for (ItemsPerNode itemsPerNode2 : ipnv) {
-			
-			
-		}
-		
-		
-		
-		
-		
+
 		
 		int[][] matrice = new int[veiH][veiW];
 
