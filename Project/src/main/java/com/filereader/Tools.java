@@ -135,9 +135,10 @@ public class Tools {
 	// in this method we will try to abstract the fact of adding a value in a
 	// specific place inside the matrix
 	public static int[][] putInMatrix(int[][] matrix, int x, int y, int toadd, int w, int h) {
-
-		for (int j = x; j < w; j++) {
-			for (int z = y; z < h; z++) {
+		int a = x + w;
+		int b = y + h;
+		for (int j = x; j < a; j++) {
+			for (int z = y; z < b; z++) {
 				matrix[z][j] = toadd;
 			}
 		}
@@ -146,7 +147,7 @@ public class Tools {
 
 	}
 
-	public static boolean testEmpty(int[][] matrix, int x, int y, int w, int h) {
+	public static List<Position> testEmpty(int[][] matrix, int x, int y, int w, int h) {
 
 		List<Position> emptyPos = new ArrayList<>();
 		boolean res = true;
@@ -157,13 +158,14 @@ public class Tools {
 
 					Position p = new Position(j, z, 1, 1);
 					emptyPos.add(p);
-					System.out.println("empty stpace at x->" + j + " and y->" + z);
+					// System.out.println("empty stpace at x->" + j + " and y->"
+					// + z);
 				} else {
 					if (x <= w) {
 						x++;
 						testEmpty(matrix, x, y, w, h);
 					} else {
-						System.out.println("end of x -> going to next line");
+						// System.out.println("end of x -> going to next line");
 
 						if (y <= h) {
 							x = 0;
@@ -180,13 +182,24 @@ public class Tools {
 			}
 		}
 
-		System.out.println("nbr de positions libres : "+emptyPos.size());
-		System.out.println("\n********\n");
-		for (Position position : emptyPos) {
-			System.out.println("p libre-> x : "+position.getX()+" y : "+position.getY());
-		}
-		return res;
+		/*
+		 * System.out.println("nbr de positions libres : "+emptyPos.size());
+		 * System.out.println("\n********\n"); for (Position position :
+		 * emptyPos) {
+		 * System.out.println("p libre-> x : "+position.getX()+" y : "+position.
+		 * getY()); }
+		 */
+		return emptyPos;
 
 	}
-
+/*
+	public List<Position> factSpace(List<Position> src){
+		for (int i = 0; i < src.size(); i++) {
+			if(src.get(i).getX()==src.get(i+1).getX()){
+				src.get(i).setH(src.get(i).getH()+src.get(i+1).getH());
+			}
+		}		
+	}
+	*/
+	
 }
