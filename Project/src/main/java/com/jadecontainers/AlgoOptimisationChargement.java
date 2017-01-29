@@ -11,8 +11,7 @@ public class AlgoOptimisationChargement extends Agent {
 
 	@Override
 	protected void setup() {
-
-		System.out.println("I am acheteur ");
+		
 		addBehaviour(new Behaviour(this) {
 			
 			@Override
