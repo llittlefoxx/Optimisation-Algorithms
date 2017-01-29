@@ -1,5 +1,7 @@
 package com.jadecontainers;
 
+import com.algorithms.Afficher;
+
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
@@ -15,7 +17,8 @@ public class AlgoOptimisationChargement extends Agent {
 			
 			@Override
 			public boolean done() {
-				System.out.println("end of behavior");
+				Afficher.aff();
+			
 				return true;
 			}
 			

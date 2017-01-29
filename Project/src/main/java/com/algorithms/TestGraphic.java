@@ -16,9 +16,7 @@ public class TestGraphic {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setBounds(x, y, w*10, h*10);
 		
-			window.getContentPane().add(new MyCanvas(itemsPerNode));	
-		
-		
+			window.getContentPane().add(new MyCanvas(itemsPerNode));
 		
 		window.setVisible(true);
 	}

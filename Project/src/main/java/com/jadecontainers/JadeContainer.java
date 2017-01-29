@@ -17,7 +17,7 @@ public class JadeContainer {
 		ProfileImpl pc = new ProfileImpl(false);
 		pc.setParameter(ProfileImpl.MAIN_HOST, "localhost");
 		AgentContainer ac = rt.createAgentContainer(pc);
-		AgentController agentController=ac.createNewAgent("Acheteur1", "com.jadecontainers.Acheteur", new Object[]{});
+		AgentController agentController=ac.createNewAgent("AlgoOptimisationChargement", "com.jadecontainers.AlgoOptimisationChargement", new Object[]{});
 		agentController.start();
 		AgentController agentController1=ac.createNewAgent("decider", "com.jadecontainers.Decider", new Object[]{});
 		agentController1.start();
